@@ -1,0 +1,16 @@
+{
+  "name": "com.pipkateam.elementary.game",
+  "version": "1.0.0",
+  "displayName": "Elementary Game",
+  "description": "This is a custom Unity package.",
+  "unity": "2022.3",
+  "keywords": [
+    "unity",
+    "package"
+  ],
+  "author": {
+    "name": "Pipka Team",
+    "email": "pipkateamofficial@gmail.com",
+    "url": "https://yourwebsite.com"
+  }
+}
