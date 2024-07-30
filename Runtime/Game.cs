@@ -16,13 +16,6 @@ namespace Elementary.Game
 
         public Action<GameState> OnGameStateChanged;
 
-        protected override void Start()
-        {
-            base.Start();
-
-            Application.targetFrameRate = -1;
-        }
-        
         public GameState GetGameState()
         {
             return currentGameState;
