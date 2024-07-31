@@ -12,7 +12,7 @@ namespace Elementary.Game
             base.Start();
         }
 
-        protected virtual void ShowRewardedVideo()
+        public virtual void ShowRewardedVideo()
         {
 
         }
