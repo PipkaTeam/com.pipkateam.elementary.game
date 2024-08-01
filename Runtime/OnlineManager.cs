@@ -17,7 +17,7 @@ namespace Elementary.Game
 
         }
 
-        protected void OnRewardedVideoFinished()
+        public void OnRewardedVideoFinished()
         {
             OnRewardedVideoFinishedEvent?.Invoke();
         }
