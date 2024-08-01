@@ -12,5 +12,8 @@
     "name": "Pipka Team",
     "email": "pipkateamofficial@gmail.com",
     "url": "https://yourwebsite.com"
+  },
+  "dependencies": {
+    "com.unity.localization": ""
   }
 }

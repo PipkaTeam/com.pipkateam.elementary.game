@@ -1,5 +1,7 @@
-using UnityEngine;
 using System;
+using System.Collections;
+using UnityEngine;
+using UnityEngine.Localization.Settings;
 using UnityEngine.SceneManagement;
 
 namespace Elementary.Game
@@ -120,6 +122,32 @@ namespace Elementary.Game
         void OnLevelFinishedLoading(Scene scene, LoadSceneMode mode)
         {
             SetGameState(GameState.Playing);
+        }
+
+        public void SetLanguage(int languageIndex)
+        {
+            StartCoroutine(SetLanguageCoroutine(languageIndex));
+        }
+
+        private IEnumerator SetLanguageCoroutine(int languageIndex)
+        {
+            yield return LocalizationSettings.InitializationOperation;
+
+            if (LocalizationSettings.InitializationOperation.IsDone)
+            {
+                if (LocalizationSettings.AvailableLocales.Locales.Count > languageIndex)
+                {
+                    LocalizationSettings.SelectedLocale = LocalizationSettings.AvailableLocales.Locales[languageIndex];
+                }
+                else
+                {
+                    Debug.LogError("Language index out of range.");
+                }
+            }
+            else
+            {
+                Debug.LogError("Localization system failed to initialize.");
+            }
         }
     }
 }
