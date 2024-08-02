@@ -10,9 +10,6 @@ namespace Elementary.Game
         [SerializeField]
         protected const string musicKey = "Music";
 
-        [SerializeField]
-        protected const string unlockedLevelIndexKey = "UnlockedLevelIndex";
-
         public AudioState LoadSounds()
         {
             int sounds = PlayerPrefs.GetInt(soundsKey, 1);
@@ -43,26 +40,6 @@ namespace Elementary.Game
             PlayerPrefs.SetInt(musicKey, music);
             PlayerPrefs.Save();
             Debug.Log($"[Elementary Game][SaveManager] Saved Music state: {newAudioState}");
-        }
-
-        public int LoadUnlockedLevelIndex()
-        {
-            int unlockedLevelIndex = PlayerPrefs.GetInt(unlockedLevelIndexKey, 1);
-            Debug.Log($"[Elementary Game][SaveManager] Loaded Unlocked Level Index: {unlockedLevelIndex}");
-            return unlockedLevelIndex;
-        }
-
-        public void SaveUnlockedLevelIndex(int newUnlockedLevelIndex)
-        {
-            if (newUnlockedLevelIndex < 0)
-            {
-                Debug.LogWarning("[Elementary Game][SaveManager] Attempted to save an invalid level index.");
-                return;
-            }
-
-            PlayerPrefs.SetInt(unlockedLevelIndexKey, newUnlockedLevelIndex);
-            PlayerPrefs.Save();
-            Debug.Log($"[Elementary Game][SaveManager] Saved Unlocked Level Index: {newUnlockedLevelIndex}");
         }
     }
 }
