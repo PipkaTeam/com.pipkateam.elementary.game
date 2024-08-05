@@ -1,11 +1,11 @@
 using System;
-using UnityEngine;
 
 namespace Elementary.Game
 {
     public class OnlineManager : Singleton<OnlineManager>
     {
         public event Action OnRewardedVideoFinishedEvent;
+        public event Action OnFullScreenVideoFinishedEvent;
 
         protected override void Start()
         {
@@ -20,6 +20,16 @@ namespace Elementary.Game
         public void OnRewardedVideoFinished()
         {
             OnRewardedVideoFinishedEvent?.Invoke();
+        }
+
+        public virtual void ShowFullScreenVideo()
+        {
+
+        }
+
+        public void OnFullScreenVideoFinished()
+        {
+            OnFullScreenVideoFinishedEvent?.Invoke();
         }
     }
 }
