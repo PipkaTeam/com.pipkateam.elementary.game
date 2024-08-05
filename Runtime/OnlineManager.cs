@@ -14,7 +14,7 @@ namespace Elementary.Game
 
         public virtual void ShowRewardedVideo()
         {
-
+            OnRewardedVideoFinished();
         }
 
         public void OnRewardedVideoFinished()
@@ -24,7 +24,7 @@ namespace Elementary.Game
 
         public virtual void ShowFullScreenVideo()
         {
-
+            OnFullScreenVideoFinished();
         }
 
         public void OnFullScreenVideoFinished()
